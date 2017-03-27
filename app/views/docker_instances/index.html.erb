@@ -1,0 +1,68 @@
+<h1>Docker Instances</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Port</th>
+      <th>Branch</th>
+
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @docker_instances.each do |docker_instance| %>
+      <tr data-id="<%= docker_instance.id %>">
+        <%= render partial: 'table_row', locals: {docker_instance: docker_instance} %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  New instance
+</button>
+<div id="logs" contenteditable>
+
+</div>
+
+<!-- New container modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">New image</h4>
+      </div>
+      <div class="modal-body">
+      <%= render 'form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="logModalLabel">New image</h4>
+      </div>
+      <div class="modal-body" id="logModalBody">
+        <div class="panel panel-default">
+          <div class="panel-body" id="logModalText">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

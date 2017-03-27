@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @docker_instance.name %>
+</p>
+
+<p>
+  <strong>Port:</strong>
+  <%= @docker_instance.port %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @docker_instance.status %>
+</p>
+
+<%= link_to 'Edit', edit_docker_instance_path(@docker_instance) %> |
+<%= link_to 'Back', docker_instances_path %>

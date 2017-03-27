@@ -1,0 +1,2 @@
+$('#myModal').modal('hide');
+$('table.table').append("<tr data-id=<%= @docker_instance.id %> >" + '<%= j render partial: 'table_row', locals: {docker_instance: @docker_instance} %>' + "</tr>");

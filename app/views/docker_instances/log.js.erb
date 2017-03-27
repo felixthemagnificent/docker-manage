@@ -1,0 +1,3 @@
+$('#logModalLabel').html('Log for <%= @docker_instance.name %>');
+$('#logModalText').html("<%= @docker_instance.get_logs %>");
+$('#logModal').modal('show');

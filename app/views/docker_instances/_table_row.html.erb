@@ -1,0 +1,9 @@
+<td><%= docker_instance.name %></td>
+<td><%= docker_instance.port %></td>
+<td><%= docker_instance.branch %></td>
+<td><%= docker_instance.status %></td>
+
+<td>
+  <button id="showLog" class="btn btn-default">Show log</button>
+  <%= link_to 'Destroy instance', docker_instance, class: 'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+</td>
